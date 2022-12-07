@@ -7,6 +7,10 @@ import (
 // Id 编号
 type Id int64
 
+func (i *Id) Value() int64 {
+	return int64(*i)
+}
+
 func (i *Id) String(opts ...stringOption) string {
 	_options := defaultStringFormatter()
 	for _, opt := range opts {
