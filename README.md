@@ -1,15 +1,20 @@
 # 项目
-[![编译状态](https://github.ruijc.com:20443/api/badges/pangum/pangu/status.svg)](https://github.ruijc.com:20443/pangum/pangu)
-[![Golang质量](https://goreportcard.com/badge/github.com/pangum/pangu)](https://goreportcard.com/report/github.com/pangum/pangu)
-![版本](https://img.shields.io/github/go-mod/go-version/pangum/pangu)
-![仓库大小](https://img.shields.io/github/repo-size/pangum/pangu)
-![最后提交](https://img.shields.io/github/last-commit/pangum/pangu)
-![授权协议](https://img.shields.io/github/license/pangum/pangu)
-![语言个数](https://img.shields.io/github/languages/count/pangum/pangu)
-![最佳语言](https://img.shields.io/github/languages/top/pangum/pangu)
-![星星个数](https://img.shields.io/github/stars/pangum/pangu?style=social)
+[![编译状态](https://github.ruijc.com:20443/api/badges/goexl/id/status.svg)](https://github.ruijc.com:20443/goexl/id)
+[![Golang质量](https://goreportcard.com/badge/github.com/goexl/id)](https://goreportcard.com/report/github.com/goexl/id)
+![版本](https://img.shields.io/github/go-mod/go-version/goexl/id)
+![仓库大小](https://img.shields.io/github/repo-size/goexl/id)
+![最后提交](https://img.shields.io/github/last-commit/goexl/id)
+![授权协议](https://img.shields.io/github/license/goexl/id)
+![语言个数](https://img.shields.io/github/languages/count/goexl/id)
+![最佳语言](https://img.shields.io/github/languages/top/goexl/id)
+![星星个数](https://img.shields.io/github/stars/goexl/id?style=social)
 
-项目介绍
+编号（`Id`）生成器算法，包括
+- `雪花`算法
+- `自增`算法
+- 接口式设计，方便增加自己的算法实现，如
+  - 基于`数据库`自增方案
+  - 基于`Redis`自增方案
 
 ## 捐助
 
@@ -20,4 +25,4 @@
 
 本项目通过`Jetbrains开源许可IDE`编写源代码，特此感谢
 
-[![Jetbrains图标](https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.svg)](https://www.jetbrains.com/?from=pangum/pangu)
+[![Jetbrains图标](https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.svg)](https://www.jetbrains.com/?from=goexl/id)
