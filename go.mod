@@ -4,7 +4,7 @@ go 1.19
 
 require (
 	github.com/goexl/gox v0.1.6
-	github.com/goexl/simaqian v0.2.3
+	github.com/goexl/simaqian v0.2.4
 )
 
 require (
