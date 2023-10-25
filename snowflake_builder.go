@@ -1,13 +1,13 @@
 package id
 
-import "github.com/goexl/simaqian"
+import "github.com/goexl/log"
 
 type snowflakeBuilder struct {
 	node   int
-	logger simaqian.Logger
+	logger log.Logger
 }
 
-func newSnowflakeBuilder(node int, logger simaqian.Logger) *snowflakeBuilder {
+func newSnowflakeBuilder(node int, logger log.Logger) *snowflakeBuilder {
 	return &snowflakeBuilder{
 		node:   node,
 		logger: logger,
