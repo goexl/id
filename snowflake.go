@@ -2,7 +2,8 @@ package id
 
 import (
 	"github.com/goexl/gox/field"
-	"github.com/goexl/simaqian"
+	"github.com/goexl/log"
+
 	"sync"
 	"time"
 )
@@ -35,10 +36,10 @@ type snowflake struct {
 	timeShift uint8
 	nodeShift uint8
 
-	logger simaqian.Logger
+	logger log.Logger
 }
 
-func newSnowflake(node int, logger simaqian.Logger) (_snowflake *snowflake) {
+func newSnowflake(node int, logger log.Logger) (_snowflake *snowflake) {
 	_snowflake = new(snowflake)
 	_snowflake.node = int64(node)
 	_snowflake.nodeMax = -1 ^ (-1 << nodeBits)

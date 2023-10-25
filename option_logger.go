@@ -1,6 +1,8 @@
 package id
 
-import "github.com/goexl/simaqian"
+import (
+	"github.com/goexl/log"
+)
 
 var (
 	_        = Logger
@@ -8,10 +10,10 @@ var (
 )
 
 type optionLogger struct {
-	logger simaqian.Logger
+	logger log.Logger
 }
 
-func Logger(logger simaqian.Logger) *optionLogger {
+func Logger(logger log.Logger) *optionLogger {
 	return &optionLogger{
 		logger: logger,
 	}

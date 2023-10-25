@@ -1,11 +1,11 @@
 package id
 
 import (
-	"github.com/goexl/simaqian"
+	"github.com/goexl/log"
 )
 
 type builder struct {
-	logger simaqian.Logger
+	logger log.Logger
 }
 
 func newBuilder(options *options) *builder {

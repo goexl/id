@@ -1,6 +1,8 @@
 package id
 
-import "github.com/goexl/simaqian"
+import (
+	"github.com/goexl/log"
+)
 
 type (
 	option interface {
@@ -8,12 +10,12 @@ type (
 	}
 
 	options struct {
-		logger simaqian.Logger
+		logger log.Logger
 	}
 )
 
 func defaultOptions() *options {
 	return &options{
-		logger: simaqian.Default(),
+		logger: log.New().Apply(),
 	}
 }
