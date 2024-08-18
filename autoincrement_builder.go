@@ -1,16 +1,16 @@
 package id
 
 type autoincrementBuilder struct {
-	from int64
+	from uint64
 }
 
-func newAutoincrementBuilder(from int64) *autoincrementBuilder {
+func newAutoincrementBuilder(from uint64) *autoincrementBuilder {
 	return &autoincrementBuilder{
 		from: from,
 	}
 }
 
-func (ab *autoincrementBuilder) From(from int64) *autoincrementBuilder {
+func (ab *autoincrementBuilder) From(from uint64) *autoincrementBuilder {
 	ab.from = from
 
 	return ab

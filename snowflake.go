@@ -24,10 +24,10 @@ var (
 
 // snowflake 雪花生成器
 type snowflake struct {
-	mu    sync.Mutex
+	mutex sync.Mutex
 	epoch time.Time
 	time  int64
-	node  int64
+	node  uint64
 	step  int64
 
 	nodeMax   int64
@@ -39,9 +39,9 @@ type snowflake struct {
 	logger log.Logger
 }
 
-func newSnowflake(node int, logger log.Logger) (_snowflake *snowflake) {
+func newSnowflake(node uint, logger log.Logger) (_snowflake *snowflake) {
 	_snowflake = new(snowflake)
-	_snowflake.node = int64(node)
+	_snowflake.node = uint64(node)
 	_snowflake.nodeMax = -1 ^ (-1 << nodeBits)
 	_snowflake.nodeMask = _snowflake.nodeMax << stepBits
 	_snowflake.stepMask = -1 ^ (-1 << stepBits)
@@ -49,7 +49,7 @@ func newSnowflake(node int, logger log.Logger) (_snowflake *snowflake) {
 	_snowflake.nodeShift = stepBits
 	_snowflake.logger = logger
 
-	if _snowflake.node < 0 || _snowflake.node > _snowflake.nodeMax {
+	if _snowflake.node < 0 || _snowflake.node > uint64(_snowflake.nodeMax) {
 		_snowflake.node = 1
 		logger.Error("节点编号出错", field.New("node.old", node), field.New("node.new", 1))
 	}
@@ -61,9 +61,9 @@ func newSnowflake(node int, logger log.Logger) (_snowflake *snowflake) {
 	return
 }
 
-func (s *snowflake) next() (_id *Id) {
-	s.mu.Lock()
-	defer s.mu.Unlock()
+func (s *snowflake) next() (id *Id) {
+	s.mutex.Lock()
+	defer s.mutex.Unlock()
 
 	now := time.Since(s.epoch).Nanoseconds() / 1000000
 	if now == s.time {
@@ -78,8 +78,8 @@ func (s *snowflake) next() (_id *Id) {
 		s.step = 0
 	}
 	s.time = now
-	__id := Id((now)<<s.timeShift | (s.node << s.nodeShift) | (s.step))
-	_id = &__id
+	_id := Id(uint64(now)<<s.timeShift | (s.node << s.nodeShift) | uint64(s.step))
+	id = &_id
 
 	return
 }

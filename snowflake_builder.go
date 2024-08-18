@@ -3,11 +3,11 @@ package id
 import "github.com/goexl/log"
 
 type snowflakeBuilder struct {
-	node   int
+	node   uint
 	logger log.Logger
 }
 
-func newSnowflakeBuilder(node int, logger log.Logger) *snowflakeBuilder {
+func newSnowflakeBuilder(node uint, logger log.Logger) *snowflakeBuilder {
 	return &snowflakeBuilder{
 		node:   node,
 		logger: logger,

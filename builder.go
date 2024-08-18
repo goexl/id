@@ -14,7 +14,7 @@ func newBuilder(options *options) *builder {
 	}
 }
 
-func (b *builder) Snowflake(node int) *snowflakeBuilder {
+func (b *builder) Snowflake(node uint) *snowflakeBuilder {
 	return newSnowflakeBuilder(node, b.logger)
 }
 

@@ -1,10 +1,10 @@
 package id
 
 type autoincrement struct {
-	from int64
+	from uint64
 }
 
-func newAutoincrement(from int64) *autoincrement {
+func newAutoincrement(from uint64) *autoincrement {
 	return &autoincrement{
 		from: from,
 	}
