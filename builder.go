@@ -8,7 +8,7 @@ type builder struct {
 	logger log.Logger
 }
 
-func newBuilder(options *options) *builder {
+func newBuilder(options *Options) *builder {
 	return &builder{
 		logger: options.logger,
 	}
