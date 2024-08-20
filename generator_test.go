@@ -8,16 +8,17 @@ import (
 )
 
 func TestSnowflake(test *testing.T) {
-	generator := id.New().Snowflake(1).Build()
+	generator := id.New().Snowflake().Node(1).Build().Build()
 	for count := 0; count < 100; count++ {
 		next := generator.Next()
-		fmt.Println(next.Value(), next.String(id.Base76()))
+		fmt.Println(next.Value(), next.String().Build().Format())
 	}
 }
 
 func TestAutoincrement(test *testing.T) {
-	generator := id.New().Autoincrement().Build()
+	generator := id.New().Autoincrement().Build().Build()
 	for count := 0; count < 100; count++ {
-		fmt.Println(generator.Next().String(id.Base76()))
+		next := generator.Next()
+		fmt.Println(next.Value(), next.String().Build().Format())
 	}
 }
