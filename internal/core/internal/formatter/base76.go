@@ -1,6 +1,8 @@
 package formatter
 
 import (
+	"strconv"
+
 	"github.com/goexl/gox"
 	"github.com/goexl/id/internal/core/internal/core"
 )
@@ -16,5 +18,5 @@ func NewBase76(id core.Valuer) *Base76 {
 }
 
 func (b *Base76) Format() string {
-	return gox.FormatIntd(int64(b.id.Value()))
+	return gox.FormatUint(b.id.Value(), 10, strconv.FormatUint)
 }
