@@ -4,12 +4,12 @@ import (
 	"time"
 )
 
-// Id 标识
+// Value 值
 // 使用接口保证扩展性
-type Id interface {
+type Value interface {
 	String() string
 
 	Time() time.Time
 
-	Value() uint64
+	Get() uint64
 }
