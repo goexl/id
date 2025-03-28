@@ -1,4 +1,4 @@
-# 项目
+# `id`
 [![编译状态](https://github.ruijc.com:20443/api/badges/goexl/id/status.svg)](https://github.ruijc.com:20443/goexl/id)
 [![Golang质量](https://goreportcard.com/badge/github.com/goexl/id)](https://goreportcard.com/report/github.com/goexl/id)
 ![版本](https://img.shields.io/github/go-mod/go-version/goexl/id)
@@ -9,12 +9,7 @@
 ![最佳语言](https://img.shields.io/github/languages/top/goexl/id)
 ![星星个数](https://img.shields.io/github/stars/goexl/id?style=social)
 
-编号（`Id`）生成器算法，包括
-- `雪花`算法
-- `自增`算法
-- 接口式设计，方便增加自己的算法实现，如
-  - 基于`数据库`自增方案
-  - 基于`Redis`自增方案
+标识生成算法，提供基础接口
 
 ## 捐助
 

@@ -1,8 +1,7 @@
 package id
 
-import (
-	"github.com/goexl/id/internal/core"
-)
-
-// Generator 标识生成器
-type Generator = core.Generator
+// Generator 生成器
+type Generator interface {
+	// Next 下一个
+	Next() Id
+}
