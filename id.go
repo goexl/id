@@ -12,6 +12,4 @@ type Id interface {
 	Time() time.Time
 
 	Value() uint64
-
-	Bytes() []byte
 }
