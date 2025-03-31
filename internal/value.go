@@ -1,4 +1,4 @@
-package id
+package internal
 
 import (
 	"time"
